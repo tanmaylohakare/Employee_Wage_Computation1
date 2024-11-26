@@ -12,11 +12,18 @@ public class Main {
 
         if(attendence== IS_PRESENT)
         {
-            System.out.println("Employee is Present ");
+            int WAGE_PER_HOUR=20;
+            int FULL_DAY_HOURS=8;
+            int daily_wage= WAGE_PER_HOUR * FULL_DAY_HOURS;
+
+            System.out.println("Daily Employee Wage "+ daily_wage);
+
+        System.out.println("Employee is Present ");
         }
         else
         {
             System.out.println("Employee is Absent");
+            System.out.println("Daily Employee Wage :0");
         }
     }
 }
