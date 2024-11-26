@@ -7,23 +7,31 @@ public class Main {
 
         System.out.println("Welcome To Employee Wage Computation ");
 
-        int IS_PRESENT=1;
-        int attendence=(int) (Math.random()*2);
+        final int IS_FULL_TIME=1;
+        final int IS_PART_TIME=2;
+        final int WAGE_PER_HOUR=20;
+        final int FULL_DAY_HOURS=8;
+        final int PART_TIME_HOURS=4;
 
-        if(attendence== IS_PRESENT)
+        int empType=(int) (Math.random()*3);
+        int workinhHours=0;
+
+        switch (empType)
         {
-            int WAGE_PER_HOUR=20;
-            int FULL_DAY_HOURS=8;
-            int daily_wage= WAGE_PER_HOUR * FULL_DAY_HOURS;
+            case IS_FULL_TIME :
+                System.out.println("Employee is Working Full Time");
+                workinhHours=FULL_DAY_HOURS;
+                break;
+            case IS_PART_TIME:
+                System.out.println("Employee is Working Part time");
+                workinhHours=PART_TIME_HOURS;
 
-            System.out.println("Daily Employee Wage "+ daily_wage);
+            default:
+                System.out.println("Employee is Absent ");
+                workinhHours = 0;
 
-        System.out.println("Employee is Present ");
         }
-        else
-        {
-            System.out.println("Employee is Absent");
-            System.out.println("Daily Employee Wage :0");
+        int dailywage = WAGE_PER_HOUR * workinhHours;
+        System.out.println("Daily Employee wage "+ dailywage);
         }
     }
-}
